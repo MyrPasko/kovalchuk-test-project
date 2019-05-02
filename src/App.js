@@ -1,34 +1,17 @@
 import React, { Component } from 'react';
-import './App.css';
-import Test from "./components/Test";
+import Lesson from "./02_components/Lesson";
+import CounterButton from "./03_state/Lesson";
 
 class App extends Component {
-    state = {
-        counter: 0,
-        isVisible: true,
-    };
-
-    onChangeNumberHandler = () => {
-        this.setState(({counter}) => ({counter: ++counter}));
-    };
-
-    changeVisibilityHandler = () => {
-        this.setState(({isVisible}) => ({isVisible: !isVisible}));
-    };
-
-    render() {
-        const { counter, isVisible } = this.state;
-
-        return (
-            <div className="App">
-                {isVisible && <Test
-                    number={counter}
-                    changeNumber={this.onChangeNumberHandler}
-                />}
-                <button onClick={this.changeVisibilityHandler}>Change visibility</button>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        Here are my child components.
+        <Lesson />
+        <CounterButton />
+      </div>
+    );
+  }
 }
 
 export default App;
